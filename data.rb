@@ -3,7 +3,6 @@ class Image
 	def initialize(data)
 
 		@information = data
-
 	end
 
 	def output_image
