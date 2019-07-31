@@ -13,9 +13,7 @@ class Image
 			print x.join("")
 			print "\n"
 		end
-
 	end
-
 end 
 
 image = Image.new([
