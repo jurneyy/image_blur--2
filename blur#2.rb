@@ -22,20 +22,15 @@ class Image
 				puts @information[y_index][x_index]
 				puts "y: #{y_index}, x: #{x_index}"
 			end 
+
 			puts " "
 		end 
 	end
 
 	def change_top(row, column)
-		#top
-		@information[row-1][column] = 1 unless [row] !=-1
-		#right
-		@information[row][column+1] = 1 unless [column] != 4
-		#Left
-		@information[row][column-1] =1 
-		#bottom
-		@information[row+1][column] = 1 
+		@information[row][column] == 1 
 	end 
+
 end 
 
 
@@ -47,8 +42,6 @@ image = Image.new([
 ])
 
 
-image.blur_image	
-image.change_top(row, column)
-
+image.blur_image	 
 
 
