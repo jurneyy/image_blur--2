@@ -22,6 +22,7 @@ class Image
 				puts @information[y_index][x_index]
 				puts "y: #{y_index}, x: #{x_index}"
 			end 
+			change_top(y_index, x_index)
 			puts " "
 		end 
 	end
