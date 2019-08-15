@@ -1,12 +1,13 @@
 class Image 
+	attr_accessor :image 
 
-	def initialize(data)
-		@information = data
+	def initialize(image)
+		@image = image
 	end
 
 	def output_image
 
-		@information.each do |x|
+		@image.each do |x|
 
 			print x.join("")
 			print "\n"
@@ -15,21 +16,17 @@ class Image
 
 	def blur_image
 
-		@information.each_with_index do |row, y_index|
+		@image.each_with_index do |row, y_index|
 
 			row.each_with_index do |column, x_index|
 
-				puts @information[y_index][x_index]
-				puts "y: #{y_index}, x: #{x_index}"
+				puts @image[y_index][x_index]
+				#puts "y: #{y_index}, x: #{x_index}"
 			end 
 
 			puts " "
 		end 
 	end
-
-	def change_top(row, column)
-		@information[row][column] == 1 
-	end 
 
 end 
 
@@ -42,6 +39,11 @@ image = Image.new([
 ])
 
 
-image.blur_image	 
+#image.blur_image
+#image.change_top(row, column)
+
+image.output_image
+image.blur_image
+
 
 

@@ -19,26 +19,28 @@ class Image
 
 			row.each_with_index do |column, x_index|
 
-				puts @information[y_index][x_index]
-				puts "y: #{y_index}, x: #{x_index}"
-			end 
-			change_top(y_index, x_index)
-			puts " "
-		end 
-	end
+				if @information[y_index][x_index] == 1 
 
-	def change_top(row, column)
-		#top
-		@information[row-1][column] = 1 unless [row] !=-1
-		#right
-		@information[row][column+1] = 1 unless [column] != 4
-		#Left
-		@information[row][column-1] =1 
-		#bottom
-		@information[row+1][column] = 1 
+					#top
+					@information[y_index-1][x_index] = 1 unless y_index == -1
+					#right
+					@information[y_index][x_index+1] = 1 unless x_index == 3
+					#Left
+					@information[y_index][x_index-1] = 1 unless y_index == 2
+					#bottom
+					@information[y_index+1][x_index] = 1 unless y_index == 2
+				end 
+
+				#puts @information[y_index][x_index]
+				#puts "y: #{y_index}, x: #{x_index}"
+			end 
+			puts " "
+		end 	
 	end 
 end 
 
+#while loop + 1 
+#print
 
 image = Image.new([
   [0, 0, 0, 0],
@@ -47,9 +49,11 @@ image = Image.new([
   [0, 0, 0, 0]
 ])
 
+#image.output_image
+image.blur_image
+image.output_image
 
-image.blur_image	
-image.change_top(row, column)
+
 
 
 
